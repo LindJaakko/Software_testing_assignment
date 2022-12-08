@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "jest": "^29.3.1",
+    "jest-chain": "^1.1.6",
+    "jest-extended": "^3.2.0"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
+
