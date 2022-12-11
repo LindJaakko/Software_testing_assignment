@@ -22,6 +22,9 @@
     "collectCoverage": true,
     "coverageReporters": [
       "lcov"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js','!src/.internal/*.js"
     ]
   }
 }
