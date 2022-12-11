@@ -24,7 +24,8 @@
       "lcov"
     ],
     "collectCoverageFrom": [
-      "src/**/*.js','!src/.internal/*.js"
+      "src/*.js",
+      "!src/.internal/**"
     ]
   }
 }
