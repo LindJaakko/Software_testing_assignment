@@ -11,3 +11,4 @@ describe('Testing the Jest framework', () => {
     expect(add(2, 2)).toBe(4)
   })
 })
+
