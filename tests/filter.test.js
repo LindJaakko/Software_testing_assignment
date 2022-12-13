@@ -56,4 +56,9 @@ describe('Tests for filter function', () => {
         const users = []
         expect(filter(users, ({ age }) => age > 51)).toStrictEqual([[]])
     })
+
+    test('Filter should return empty array for null input', () => {
+        const users = null
+        expect(filter(users, ({ age }) => age > 51)).toStrictEqual([[]])
+    })
 })
