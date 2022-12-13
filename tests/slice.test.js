@@ -34,4 +34,8 @@ describe('Tests for slice function', () => {
     test('Slice should return []', () => {
         expect(slice([], 0, 0)).toStrictEqual([])
     })
+
+    test('Slice should return []', () => {
+        expect(slice(null, 0, 0)).toStrictEqual([])
+    })
 })
