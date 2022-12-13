@@ -1,12 +1,54 @@
 import filter from '../src/filter'
-import add from '../src/add'
 
-describe('Testing the Jest framework', () => {
-  test('adds 1 + 2 to equal 3', () => {
-    expect(add(1, 2)).toBe(3)
-  })
+describe('Tests for filter function', () => {
+    test('Filter should return object for barney', () => {
+        const users = [
+            { user: 'barney', active: true },
+            { user: 'fred', active: false },
+        ]
+        expect(filter(users, ({ active }) => active)).toStrictEqual([
+            {
+                user: 'barney',
+                active: true,
+            },
+        ])
+    })
 
-  test('adds 2 + 2 to equal 4', () => {
-    expect(add(2, 2)).toBe(4)
-  })
+    test('Filter should return object for barney', () => {
+        const users = [
+            { user: 'barney', age: 50 },
+            { user: 'fred', age: 25 },
+        ]
+        expect(filter(users, ({ age }) => age > 30)).toStrictEqual([
+            {
+                user: 'barney',
+                age: 50,
+            },
+        ])
+    })
+
+    test('Filter should return two objects', () => {
+        const users = [
+            { user: 'barney', age: 50 },
+            { user: 'fred', age: 25 },
+        ]
+        expect(filter(users, ({ age }) => age > 20)).toStrictEqual([
+            {
+                user: 'barney',
+                age: 50,
+            },
+            {
+                user: 'fred',
+                age: 25,
+            },
+        ])
+    })
+
+    test('Filter should return no objects', () => {
+        const users = [
+            { user: 'barney', age: 50 },
+            { user: 'fred', age: 25 },
+        ]
+        expect(filter(users, ({ age }) => age > 51)).toStrictEqual([[]])
+    })
 })
