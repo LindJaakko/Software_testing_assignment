@@ -6,7 +6,7 @@ describe('Tests for words function', () => {
         expect(words(string)).toStrictEqual(['one', 'two', 'three'])
     })
 
-    test('Slice should return array of words in string with &', () => {
+    test('Words should return array of words in string with &', () => {
         const string = 'one, two, three &'
         expect(words(string, /[^, ]+/g)).toStrictEqual([
             'one',
@@ -16,7 +16,7 @@ describe('Tests for words function', () => {
         ])
     })
 
-    test('Slice should return array of words in string without &', () => {
+    test('Words should return array of words in string without &', () => {
         const string = 'one, two, three &'
         expect(words(string)).toStrictEqual(['one', 'two', 'three'])
     })
