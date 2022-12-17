@@ -20,4 +20,19 @@ describe('Tests for words function', () => {
         const string = 'one, two, three &'
         expect(words(string)).toStrictEqual(['one', 'two', 'three'])
     })
+
+    test('Words should return empty array', () => {
+        const string = '% # &'
+        expect(words(string)).toStrictEqual([])
+    })
+
+    test('Words should return empty array without pattern', () => {
+        const string = ''
+        expect(words(string)).toStrictEqual([])
+    })
+
+    test('Words should return empty array with pattern', () => {
+        const string = ''
+        expect(words(string, /[^, ]+/g)).toStrictEqual([])
+    })
 })
