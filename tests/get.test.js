@@ -3,6 +3,7 @@ import get from '../src/get'
 const object = { 'a': [{ 'b': { 'c': 3 } }] }
 const objectErrValue = { 'a': [{ 'b': { 'c': undefined } }] }
 const emptyObject = {}
+const undefinedObject = null
 
 describe('Testing get.js', () => {
   test('get value from path', () => {
@@ -19,6 +20,10 @@ describe('Testing get.js', () => {
 
   test('return defaultValue when object is empty', () => {
     expect(get(emptyObject, 'a[0].b.d', 0)).toBe(0)
+  })
+
+  test('return defaultValue when object is null', () => {
+    expect(get(undefinedObject, 'a[0].b.d', 0)).toBe(0)
   })
 
 })
