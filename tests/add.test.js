@@ -1,6 +1,7 @@
 import add from '../src/add'
 
 describe('Testing add.js', () => {
+
   test('adds 1 + 2 to equal 3', () => {
     expect(add(1, 2)).toBe(3)
   })
@@ -21,5 +22,3 @@ describe('Testing add.js', () => {
     expect(add(1, 2.4)).toBe(3.4)
   })
 })
-
-
