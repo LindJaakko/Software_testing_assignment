@@ -20,4 +20,12 @@ describe('Tests for ceil function', () => {
     test('Ceil should return -3.2', () => {
         expect(ceil(-3.23, 1)).toBe(-3.2)
     })
+
+    test('Ceil should return 3.3', () => {
+        expect(ceil(3.25, 1)).toBe(3.3)
+    })
+
+    test('Ceil should return NaN', () => {
+        expect(ceil('test')).toBe(NaN)
+    })
 })
